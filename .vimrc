@@ -17,6 +17,8 @@ set t_Co=256
 set number
 set cc=80
 set nocompatible
+let g:tex_flavor='latex'
+set grepprg=grep\ -nH\ $*
 
 highlight Comment cterm=italic
 highlight ColorColumn ctermbg=8
