@@ -40,7 +40,7 @@ precmd() {
 }
 
 export DEBFULLNAME="Patrick Niklaus"
-export DEBEMAIL="patrick.niklaus@googlemail.com"
+export DEBEMAIL="patrick.niklaus@student.kit.edu"
 export TERM="rxvt-unicode"
 export EDITOR="vim"
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
