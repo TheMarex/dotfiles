@@ -22,6 +22,3 @@
 [submodule ".config/awesome/vicious"]
 	path = .config/awesome/vicious
 	url = http://git.sysphere.org/vicious
-[submodule ".vim/bundle/latex-suite"]
-	path = .vim/bundle/latex-suite
-	url = git://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
