@@ -1,0 +1,18 @@
+[submodule ".vim/bundle/glib.vim"]
+	path = .vim/bundle/glib.vim
+	url = git://github.com/vim-scripts/glib.vim.git
+[submodule ".vim/bundle/molakai"]
+	path = .vim/bundle/molakai
+	url = git://github.com/tomasr/molokai.git
+[submodule ".vim/bundle/neocomplcache"]
+	path = .vim/bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/vim-trailing-whitespace"]
+	path = .vim/bundle/vim-trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace
+[submodule ".vim/bundle/vim-vividchalk"]
+	path = .vim/bundle/vim-vividchalk
+	url = git://github.com/tpope/vim-vividchalk.git
