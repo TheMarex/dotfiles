@@ -29,6 +29,7 @@ set laststatus=2
 autocmd BufEnter *.html set ai sw=2 ts=2
 autocmd BufEnter *.c set ai sw=4 ts=4
 autocmd BufEnter *.py set ai et ts=4 sw=4 sts=4
+autocmd BufEnter *.tex set ai et ts=2 sw=2 sts=2
 autocmd BufEnter *.s set ai et ts=4 sw=4 sts=4 syn=mips
 autocmd BufEnter *.lua set ai et ts=4 sw=4 sts=4
 autocmd BufEnter *.hs set ai et ts=4 sw=4 sts=4
