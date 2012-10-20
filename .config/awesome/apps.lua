@@ -14,6 +14,15 @@ shifty.config.apps = {
     {
         match = {
             class = {
+                "Gummi"
+            }
+        },
+        float = false,
+        tag = "Office",
+    },
+    {
+        match = {
+            class = {
                 "Pidgin"
             }
         },
@@ -53,10 +62,12 @@ shifty.config.apps = {
     },
     {
         match = {
-            "MPlayer",
-            "Vlc",
-            "Totem",
-            "Gimp.*"
+            class = {
+                "MPlayer",
+                "Vlc",
+                "Totem",
+                "Gimp.*"
+            },
         },
         float = true,
         titlebar = true,
@@ -77,7 +88,9 @@ shifty.config.apps = {
     },
     {
         match = {
-            "gnome%-panel",
+            class = {
+                "gnome%-panel",
+            }
         },
         intrusive = true,
         float = true,
@@ -85,9 +98,11 @@ shifty.config.apps = {
     },
     {
         match = {
-            "clock%-applet",
-            "hamster%-applet",
-            "Do",
+            class = {
+                "clock%-applet",
+                "hamster%-applet",
+                "Do",
+            }
         },
         float = true,
         intrusive = true,
@@ -103,8 +118,9 @@ shifty.config.apps = {
     },
     {
         match = {
-            "update%-manager",
-            "Update%-manager",
+            class = {
+                "Update%-manager",
+            }
         },
         tag = "Update",
     },
