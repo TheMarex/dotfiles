@@ -1,22 +1,44 @@
-# The following lines were added by compinstall
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/patrick/.zshrc'
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="clean-candy"
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -e
-# End of lines configured by zsh-newuser-install
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+export PATH=/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/home/patrick/bin:/usr/local/sbin:/usr/sbin
 
 alias vim='vimx'
 alias urxvt='urxvt256c'
 alias grep='grep --color=always'
-alias ls='ls --color=auto'
 alias ll='ls -g -o --human-readable --color=auto'
 alias la='ls -a --color=auto'
 alias py='python'
@@ -26,22 +48,7 @@ alias agi='sudo apt-get install'
 alias runs='ps -ef | grep'
 alias config='git --git-dir=$HOME/.config.git/'
 
-autoload -U colors && colors
-PS1="%{$fg_bold[blue]%}%n %{$fg_no_bold[white]%}%~ %{$fg_bold[black]%}#%{$reset_color%} "
-
-precmd() {
-    [[ -t 1 ]] || return
-    case $TERM in
-      sun-cmd) print -Pn "\e]l%~\e\\"
-        ;;
-      *xterm*|rxvt|(dt|k|E)term) print -Pn "\e]2;%m : %~\a"
-        ;;
-    esac
-}
-
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"
 export TERM="rxvt-unicode"
 export EDITOR="vim"
-export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-
