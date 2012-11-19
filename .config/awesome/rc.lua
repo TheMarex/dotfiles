@@ -54,4 +54,4 @@ shifty.init()
 require('keys')
 
 
-awful.util.spawn(compositor)
+-- awful.util.spawn(compositor)

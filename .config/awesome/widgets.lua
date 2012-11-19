@@ -204,9 +204,7 @@ vicious.register(memwidget, vicious.widgets.mem,
 wifiwidget = widget({ type = "textbox" })
 vicious.register(wifiwidget, vicious.widgets.wifi,
 	function (widget, args)
-        signal = tonumber(args["{link}"])
-        name = tonumber(args["{ssid}"])
-        return colorize(name .. ": ", whi) .. colorize(signal, blu)
+        return colorize(args["{ssid}"] .. ": ", whi) .. colorize(args["{link}"], blu)
 	end
 	, 2, "wlan0")
 
