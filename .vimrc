@@ -2,6 +2,8 @@
 call pathogen#infect('bundle')
 call pathogen#helptags()
 
+set runtimepath-=~/.vim/bundle/vim-latex
+
 syntax on
 "colorscheme wombat256
 colorscheme molokai
