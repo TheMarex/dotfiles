@@ -26,6 +26,7 @@ highlight Comment cterm=italic
 highlight ColorColumn ctermbg=8
 
 set laststatus=2
+let g:Powerline_symbols='unicode'
 
 " Defaults
 autocmd BufEnter *.html set ai sw=2 ts=2
