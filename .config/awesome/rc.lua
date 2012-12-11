@@ -12,6 +12,7 @@ vicious = require("vicious")
 require("delightful.widgets.pulseaudio")
 require("delightful.widgets.network")
 require("delightful.widgets.battery")
+require("delightful.widgets.datetime")
 
 -- useful for debugging, marks the beginning of rc.lua exec
 print("Entered rc.lua: " .. os.time())

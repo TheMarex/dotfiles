@@ -85,8 +85,10 @@ vicious.register(cpuwidget,
 
 -- Date and time
 --
-datewidget = widget({ type = "textbox" })
-vicious.register(datewidget, vicious.widgets.date, colorize("%A, %d. %B %H:%M", whi), 60)
+
+-- Date and time
+--
+datewidget = delightful.widgets.datetime:load({})[1]
 
 -- Left arrow widget
 larrow = widget({ type = "imagebox" })
