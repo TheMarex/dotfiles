@@ -14,12 +14,12 @@ if screen.count() == 1 then
             layout      = awful.layout.suit.max,
             exclusive   = true,
             position    = 2,
-            init        = true
         },
         ["IM"] = {
             layout    = awful.layout.suit.tile,
             mwfact    = 0.80,
             exclusive = true,
+            spawn     = messenger,
             position  = 3,
         },
         ["Music"] = {
@@ -76,23 +76,23 @@ else
             layout      = awful.layout.suit.max,
             exclusive   = true,
             screen      = 1,
-            position    = 2,
-            init        = true
+            position    = 1,
+            spawn       = browser,
         },
         ["IM"] = {
             layout    = awful.layout.suit.tile,
             mwfact    = 0.80,
             exclusive = true,
             screen    = 1,
-            position  = 1,
+            position  = 2,
+            spawn     = messenger,
         },
         ["Music"] = {
             layout    = awful.layout.suit.max,
             screen    = 2,
             position  = 2,
             exclusie  = true,
-            init      = true,
-            spawn     = "banshee",
+            spawn     = musicplayer,
             nopop     = true,
         },
         ["Media"] = {
@@ -105,12 +105,12 @@ else
             layout    = awful.layout.suit.max,
             exclusive = false,
             screen    = 2,
-            position  = 6,
+            position  = 4,
         },
         ["Office"] = {
             layout   = awful.layout.suit.tile,
             screen   = 2,
-            position = 4,
+            position = 5,
         },
         ["Torrent"] = {
             layout    = awful.layout.suit.tile,
@@ -122,7 +122,7 @@ else
             layout    = awful.layout.suit.max,
             exclusive = true,
             screen    = 2,
-            position  = 5,
+            position  = 6,
         },
         ["Files"] = {
             layout    = awful.layout.suit.tile,

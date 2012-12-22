@@ -28,6 +28,8 @@ terminal    = "gnome-terminal"
 filemanager = terminal .. " -e ranger"
 compositor  = "unagi"
 browser     = "chromium-browser"
+musicplayer = "banshee"
+messenger   = "pidgin"
 modkey      = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
