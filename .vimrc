@@ -18,6 +18,7 @@ filetype plugin on
 set t_Co=256
 set number
 set cc=80
+set ts=4
 set nocompatible
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
