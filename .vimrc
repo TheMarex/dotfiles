@@ -28,6 +28,9 @@ highlight ColorColumn ctermbg=8
 set laststatus=2
 let g:Powerline_symbols='unicode'
 
+set listchars=tab:»·,trail:·
+set list
+
 " Defaults
 autocmd BufEnter *.html set ai sw=2 ts=2
 autocmd BufEnter *.c set ai sw=4 ts=4
@@ -46,6 +49,9 @@ autocmd BufEnter */Compiz/*/*.h set ai sw=4 sts=4 ts=8
 autocmd BufEnter */Compiz/*/*.c set ai sw=4 sts=4 ts=8
 autocmd BufEnter simple-ccsm.in set ai et ts=4 sw=4 sts=4
 autocmd BufEnter sharez.in set ai et ts=4 sw=4 sts=4
+
+" alaCarte
+autocmd BufEnter */PSE/*/*.cpp set ai sw=4 ts=4 syntax=cpp11
 
 " Custom filetype support
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
