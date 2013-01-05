@@ -22,14 +22,17 @@ set ts=4
 set nocompatible
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
+set ssop-=options
 
 highlight Comment cterm=italic
-highlight ColorColumn ctermbg=8
+highlight ColorColumn ctermbg=0
 
 set laststatus=2
-let g:Powerline_symbols='unicode'
+"let g:Powerline_symbols='unicode'
+let g:Powerline_symbols='fancy'
 
-set listchars=tab:»·,trail:·
+"set listchars=tab:»·,trail:·
+set listchars=tab:\|·,trail:·
 set list
 
 " Defaults
@@ -234,6 +237,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType cpp set omnifunc=cppcomplete#CompleteCPP
 
 " Enable heavy omni completion, which require computational power and may stall the vim. 
 if !exists('g:neocomplcache_omni_patterns')
