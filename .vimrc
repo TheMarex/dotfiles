@@ -11,6 +11,8 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set cursorline
+set cursorcolumn
 set mouse=a
 set guioptions+=a
 set nocp
