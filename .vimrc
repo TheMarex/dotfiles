@@ -86,7 +86,7 @@ map <F9> :!/usr/bin/cscope -uUR<cr>
 set tags=./tags;/
 
 if has("cscope")
-  set csprg=~/bin/cscope
+  set csprg=/usr/bin/cscope
   set csto=0
   set cst
   set nocsverb
