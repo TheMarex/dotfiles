@@ -30,7 +30,8 @@ shifty.config.apps = {
     },
     {
         match = {
-            "banshee"
+            "banshee",
+            "ncmpcpp%: .*"
         },
         tag = "Music",
     },

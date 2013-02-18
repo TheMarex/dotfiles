@@ -28,7 +28,7 @@ terminal    = "gnome-terminal"
 filemanager = terminal .. " -e ranger"
 compositor  = "unagi"
 browser     = "chromium-browser"
-musicplayer = "banshee"
+musicplayer = terminal .. " -e ncmpcpp"
 messenger   = "pidgin"
 modkey      = "Mod4"
 

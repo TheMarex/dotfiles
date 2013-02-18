@@ -91,12 +91,16 @@ vicious.register(cpuwidget,
 datewidget = delightful.widgets.datetime:load({})[1]
 
 -- Left arrow widget
-larrow = widget({ type = "imagebox" })
-larrow.image = image(theme.arrow_left)
+--larrow = widget({ type = "imagebox" })
+--larrow.image = image(theme.arrow_left)
+larrow = widget({ type = "textbox" })
+larrow.text = " ❬ "
 
 -- Right arrow widget
-rarrow = widget({ type = "imagebox" })
-rarrow.image = image(theme.arrow_right)
+-- rarrow = widget({ type = "imagebox" })
+-- rarrow.image = image(theme.arrow_right)
+rarrow = widget({ type = "textbox" })
+rarrow.text = " ❭ "
 
 -- Spacer widget
 spacer = widget({ type = "imagebox" })
@@ -278,13 +282,11 @@ for s = 1, screen.count() do
     panel_top[s] = awful.wibox({position = "top", height = 16, screen = s})
 
     panel_top[s].widgets = {
-        rarrow,
         mytaglist[s],
         rarrow,
         msgbox,
         prompt_box[s],
         {
-            larrow,
             datewidget,
             larrow,
             kbdcfg.widget,

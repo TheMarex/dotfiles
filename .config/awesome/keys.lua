@@ -59,6 +59,7 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({modkey,}, "Return", function() awful.util.spawn(terminal) end),
     awful.key({modkey,}, "Menu", function() awful.util.spawn(filemanager) end),
+    awful.key({modkey,}, "+", function() awful.util.spawn(musicplayer) end),
     awful.key({modkey, "Control"}, "r", awesome.restart),
     awful.key({modkey, "Shift"}, "q", awesome.quit),
 
@@ -72,7 +73,7 @@ globalkeys = awful.util.table.join(
 
     awful.key({modkey, "Shift"}, "Return",
               function ()
-                  awful.prompt.run({ prompt = "Run in terminal: " },
+                  awful.prompt.run({ prompt = colorize("Run in Terminal: ", brblu), },
                                    prompt_box[mouse.screen].widget,
                                    function (...) awful.util.spawn(terminal .. " -e " .. ...) end,
                                    awful.completion.shell,
