@@ -284,8 +284,6 @@ for s = 1, screen.count() do
     panel_top[s].widgets = {
         mytaglist[s],
         rarrow,
-        msgbox,
-        prompt_box[s],
         {
             datewidget,
             larrow,
@@ -297,25 +295,27 @@ for s = 1, screen.count() do
             larrow,
             batteryicons[1],
             larrow,
-            cpuwidget,
+            layout_box[s],
             larrow,
-            freqwidget,
-            larrow,
-            tempwidget,
-            larrow,
-            memwidget,
-            larrow,
-            networkwidgets[1],
-            larrow,
+            mytasklist[s],
             layout = awful.widget.layout.horizontal.rightleft,
         },
         layout = awful.widget.layout.horizontal.leftright
         }
     panel_bottom[s].widgets = {
-        layout_box[s],
-        larrow,
-        mytasklist[s],
-        layout = awful.widget.layout.horizontal.rightleft
+            cpuwidget,
+            rarrow,
+            freqwidget,
+            rarrow,
+            tempwidget,
+            rarrow,
+            memwidget,
+            rarrow,
+            networkwidgets[1],
+            rarrow,
+            msgbox,
+            prompt_box[s],
+            layout = awful.widget.layout.horizontal.leftright,
         }
 
     panel_bottom[s].screen = s
