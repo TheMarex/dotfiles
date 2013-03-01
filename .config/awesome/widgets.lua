@@ -85,9 +85,6 @@ vicious.register(cpuwidget,
 
 -- Date and time
 --
-
--- Date and time
---
 datewidget = delightful.widgets.datetime:load({})[1]
 
 -- Left arrow widget
@@ -214,6 +211,15 @@ vicious.register(wifiwidget, vicious.widgets.wifi,
 	end
 	, 2, "wlan0")
 
+-- MPD
+--
+mpdwidget = widget({ type = "textbox" })
+vicious.register(mpdwidget, vicious.widgets.mpd,
+	function (widget, args)
+        return colorize(args["{Artist}"] .. " - ", whi) .. colorize(args["{Title}"], blu)
+	end
+	, 2)
+
 -- Keyboard
 --
 kbdcfg = {}
@@ -315,6 +321,11 @@ for s = 1, screen.count() do
             rarrow,
             msgbox,
             prompt_box[s],
+            {
+                mpdwidget,
+                larrow,
+                layout = awful.widget.layout.horizontal.rightleft,
+            },
             layout = awful.widget.layout.horizontal.leftright,
         }
 
