@@ -53,6 +53,11 @@ function umedia () {
 	sudo umount "/media/$1"
 }
 
+function test_awesome () {
+	Xephyr -s 1024x800 :1 &
+	DISPLAY=:1 awesome
+}
+
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"
 export TERM="rxvt-unicode"
