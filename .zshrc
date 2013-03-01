@@ -49,6 +49,9 @@ alias vt='vim -p'
 alias agi='sudo apt-get install'
 alias runs='ps -ef | grep'
 alias config='git --git-dir=$HOME/.config.git/'
+function umedia () {
+	sudo umount "/media/$1"
+}
 
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"
