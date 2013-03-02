@@ -74,11 +74,11 @@ vicious.register(cpuwidget,
                     end
                     return format(0) .. " " .. format(1)
                  end)
-print("Init cpu: " .. os.time())
 
 -- Date and time
 --
 -- datewidget = delightful.widgets.datetime:load({})[1]
+datewidget = awful.widget.textclock()
 
 -- Left arrow widget
 larrow = wibox.widget.textbox()
@@ -91,8 +91,6 @@ rarrow:set_markup(" ❭ ")
 -- Spacer widget
 spacer = wibox.widget.imagebox()
 spacer:set_image(theme.spacer)
-
-print("Init spacer: " .. os.time())
 
 -- CPU Temp
 --
@@ -114,8 +112,6 @@ vicious.register(tempwidget, vicious.widgets.thermal,
         return colorize("Temp: ", whi) .. str
 	end
 	, 2, "thermal_zone0")
-
-print("Init temp: " .. os.time())
 
 -- CPU Frequ
 --
@@ -173,8 +169,6 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
 	end
 	, 2)
 
-print("Init mpd: " .. os.time())
-
 -- Keyboard
 --
 kbdcfg = {}
@@ -196,30 +190,20 @@ kbdcfg.switch = function ()
    os.execute(cmd)
 end
 
-print("Init Keyboard: " .. os.time())
-
 -- Volumen
 --
 volumewidgets, volumeicons = delightful.widgets.pulseaudio:load({})
 
-print("Init volume: " .. os.time())
-
 -- Network
 --
---networkwidgets, _ = delightful.widgets.network:load(
---                        {
---                            excluded_devices = {"p4p1"},
---                            update_interval = 1,
---                            no_icon = true,
---                        })
-
-print("Init network: " .. os.time())
+networkwidget = wibox.widget.textbox()
+vicious.register(networkwidget, vicious.widgets.net,
+    colorize('↓ ${wlan0 down_kb}', blu) .. " "  ..colorize('↑ ${wlan0 up_kb}', yel)
+	, 2)
 
 -- Battery
 --
 batterywidgets, batteryicons = delightful.widgets.battery:load({})
-
-print("Init widgets: " .. os.time())
 
 -- Create bottom panel
 --
@@ -251,18 +235,18 @@ for s = 1, screen.count() do
     top_left:add(mytaglist[s])
     top_left:add(rarrow)
 
---    top_right:add(datewidget)
-    top_right:add(larrow)
-    top_right:add(kbdcfg.widget)
-    top_right:add(larrow)
-    top_right:add(wifiwidget)
-    top_right:add(larrow)
-    top_right:add(volumeicons[1])
-    top_right:add(larrow)
-    top_right:add(batteryicons[1])
     top_right:add(larrow)
     top_right:add(layout_box[s])
     top_right:add(larrow)
+    top_right:add(batteryicons[1])
+    top_right:add(larrow)
+    top_right:add(volumeicons[1])
+    top_right:add(larrow)
+    top_right:add(wifiwidget)
+    top_right:add(larrow)
+    top_right:add(kbdcfg.widget)
+    top_right:add(larrow)
+    top_right:add(datewidget)
 
     top_layout:set_left(top_left)
     top_layout:set_middle(mytasklist[s])
@@ -280,12 +264,12 @@ for s = 1, screen.count() do
     bottom_left:add(rarrow)
     bottom_left:add(memwidget)
     bottom_left:add(rarrow)
---    bottom_left:add(networkwidgets[1])
+    bottom_left:add(networkwidget)
     bottom_left:add(rarrow)
     bottom_left:add(prompt_box[s])
 
-    botton_right:add(mpdwidget)
     botton_right:add(larrow)
+    botton_right:add(mpdwidget)
 
     bottom_layout:set_left(bottom_left)
     bottom_layout:set_right(botton_right)
