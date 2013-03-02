@@ -51,7 +51,7 @@ function add_icon(settings)
     end
 
     if (settings.label) then
-        caption = widget({ type="textbox", align="right", width=labelsize.width })
+        caption = wibox.widget.textbox()
         caption.ellipsize = "middle"
         caption.text = settings.label
         caption:buttons({

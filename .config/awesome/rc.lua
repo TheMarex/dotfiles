@@ -2,12 +2,13 @@
 -- Main config file
 --
 
-require("awful")
-require("root")
-require("awful.autofocus")
-require("beautiful")
-require("naughty")
-require("shifty")
+awful = require("awful")
+wibox = require("wibox")
+root = require("root")
+awful.autofocus = require("awful.autofocus")
+beautiful = require("beautiful")
+naughty = require("naughty")
+shifty  = require("shifty")
 vicious = require("vicious")
 require("delightful.widgets.pulseaudio")
 require("delightful.widgets.network")

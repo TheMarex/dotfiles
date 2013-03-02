@@ -136,9 +136,10 @@ function load(self, config)
 						awful_util.spawn(cpu_config.command, true)
 					end
 			end)
-			icon = widget({ type = 'imagebox', name = 'cpu' })
+			icon = wibox.widget.imagebox()
+            icon:set_name("cpu")
 			icon:buttons(buttons)
-			icon.image = icon_data
+			icon:set_image(icon_data)
 			icon_tooltip = awful_tooltip({ objects = { icon } })
 		end
 	end

@@ -55,7 +55,8 @@ function umedia () {
 
 function test_awesome () {
 	Xephyr -s 1024x800 :1 &
-	DISPLAY=:1 awesome
+	sleep 1
+	DISPLAY=:1 $1 -c $2
 }
 
 export DEBFULLNAME="Patrick Niklaus"

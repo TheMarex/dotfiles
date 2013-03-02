@@ -77,6 +77,7 @@ nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
 nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
 nnoremap g[ :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 nnoremap g/ :cs find 0 <C-R>=expand("<cword>")<CR><CR>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
