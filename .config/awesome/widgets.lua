@@ -175,7 +175,8 @@ kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
 kbdcfg.layout = { "de", "de"}
 kbdcfg.variant = { nil, "neo"}
-kbdcfg.current = 1  -- us is our default layout
+kbdcfg.default = nil
+kbdcfg.current = 1  -- de is our default layout
 kbdcfg.widget = wibox.widget.textbox()
 kbdcfg.widget:set_markup(" " .. kbdcfg.layout[kbdcfg.current] .. " ")
 kbdcfg.switch = function ()
@@ -186,7 +187,11 @@ kbdcfg.switch = function ()
    if vrt ~= nil then
       cmd = cmd .. " -variant " .. vrt
    end
-   kbdcfg.widget:set_markup(vrt ~= nil and vrt or lyt)
+   str = vrt ~= nil and vrt or lyt
+   if vrt ~= kbdcfg.default then
+       str = colorize(vrt, yel)
+   end
+   kbdcfg.widget:set_markup(str)
    os.execute(cmd)
 end
 
