@@ -25,9 +25,10 @@ globalkeys = awful.util.table.join(
     awful.key({modkey, "Control"},
               "n",
               function()
-                  local t = awful.tag.selected()
-                  local s = awful.util.cycle(screen.count(), t.screen + 1)
-                  awful.tag.history.restore()
+                  local c = awful.mouse.client_under_pointer()
+                  local t = awful.tag.selected(c.screen)
+                  local s = awful.util.cycle(screen.count(), c.screen + 1)
+                  awful.tag.viewnext(c.screen)
                   t = shifty.tagtoscr(s, t)
                   awful.tag.viewonly(t)
               end),
