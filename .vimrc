@@ -6,7 +6,10 @@ set runtimepath-=~/.vim/bundle/vim-latex
 
 syntax on
 "colorscheme wombat256
-colorscheme molokai
+"colorscheme molokai
+set background=dark
+let g:solarized_bold=1
+colorscheme solarized
 set ignorecase
 set smartcase
 set incsearch
@@ -47,6 +50,7 @@ autocmd BufEnter *.lua set ai et ts=4 sw=4 sts=4
 autocmd BufEnter *.hs set ai et ts=4 sw=4 sts=4
 autocmd BufEnter *.java set ai et sw=4 ts=4 sts=4
 autocmd BufEnter *.cpp set ai sw=4 ts=4
+autocmd BufEnter *.hpp set ai sw=4 ts=4
 autocmd BufEnter *.h set ai sw=4 ts=4
 
 " Compiz
@@ -67,6 +71,7 @@ au BufRead,BufNewFile *.vapi            setfiletype vala
 au BufRead,BufNewFile *.s               setfiletype mips
 
 " Keybinding
+call togglebg#map("<F5>")
 vmap <C-c> "*y
 vmap <C-v> "*p
 nnoremap <C-h> <C-w>h

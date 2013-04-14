@@ -29,7 +29,7 @@ ZSH_THEME="marex"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting)
+#plugins=(git zsh-syntax-highlighting)
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
@@ -59,7 +59,13 @@ function test_awesome () {
 	DISPLAY=:1 $1 -c $2
 }
 
+function clr ()
+{
+	ln -sf ~/.config/colors/$1 ~/.config/colors/current
+	xrdb ~/.Xresources
+}
+
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"
-export TERM="rxvt-unicode"
+#export TERM="rxvt-unicode"
 export EDITOR="vim"
