@@ -25,7 +25,7 @@ theme_path = "/home/patrick/.config/awesome/themes/simpledark/theme.lua"
 beautiful.init(theme_path)
 
 --terminal = "terminator"
-terminal    = "gnome-terminal"
+terminal    = "urxvt256c"
 filemanager = terminal .. " -e ranger"
 compositor  = "unagi"
 browser     = "chromium-browser"
