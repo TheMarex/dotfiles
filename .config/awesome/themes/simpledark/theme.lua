@@ -82,5 +82,5 @@ theme.menu_height = "14"
 theme.menu_width  = "90"
 
 -- WALLPAPER
-theme.wallpaper_cmd = { "" }
+theme.wallpaper_cmd = { "set-gnome-bg" }
 return theme

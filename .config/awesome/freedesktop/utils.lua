@@ -223,7 +223,7 @@ function parse_dirs_and_files(arg)
     end
     local paths = io.popen('find '..arg.dir..' -maxdepth 1 -type f'):lines()
     for path in paths do
-        if not path:find("\.desktop$") then
+        if not path:find("\\.desktop$") then
             local file = {}
             file.filename = path:match("[^/]+$")
             file.path = path

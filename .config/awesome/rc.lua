@@ -4,7 +4,6 @@
 
 awful = require("awful")
 wibox = require("wibox")
-root = require("root")
 awful.autofocus = require("awful.autofocus")
 beautiful = require("beautiful")
 naughty = require("naughty")
@@ -25,7 +24,7 @@ theme_path = "/home/patrick/.config/awesome/themes/simpledark/theme.lua"
 beautiful.init(theme_path)
 
 --terminal = "terminator"
-terminal    = "urxvt256c"
+terminal    = "urxvt"
 filemanager = terminal .. " -e ranger"
 compositor  = "unagi"
 browser     = "chromium-browser"

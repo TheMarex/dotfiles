@@ -36,10 +36,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/home/patrick/bin:/usr/local/sbin:/usr/sbin
+export PATH=/home/patrick/.cabal/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin
 
-alias vim='vimx'
-alias urxvt='urxvt256c'
 alias grep='grep --color=always'
 alias ll='ls -g -o --human-readable --color=auto'
 alias la='ls -a --color=auto'
