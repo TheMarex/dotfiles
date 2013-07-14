@@ -27,7 +27,7 @@ beautiful.init(theme_path)
 terminal    = "urxvt"
 filemanager = terminal .. " -e ranger"
 compositor  = "unagi"
-browser     = "chromium-browser"
+browser     = "firefox"
 musicplayer = terminal .. " -e ncmpcpp"
 messenger   = "pidgin"
 modkey      = "Mod4"
@@ -57,4 +57,4 @@ shifty.init()
 require('keys')
 
 
--- awful.util.spawn(compositor)
+awful.util.spawn(compositor)
