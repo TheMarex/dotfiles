@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/molakai"]
 	path = .vim/bundle/molakai
 	url = git://github.com/tomasr/molokai.git
-[submodule ".vim/bundle/neocomplcache"]
-	path = .vim/bundle/neocomplcache
-	url = git://github.com/Shougo/neocomplcache.git
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
