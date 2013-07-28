@@ -75,6 +75,7 @@ call togglebg#map("<F5>")
 vmap <C-c> "*y
 vmap <C-v> "*p
 nnoremap <C-h> <C-w>h
+nnoremap <F3> :NumbersToggle<CR>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
