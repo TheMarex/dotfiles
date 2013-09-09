@@ -7,7 +7,7 @@ home = os.path.expanduser("~/")
 dotfiles = os.path.expanduser("~/.dotfiles")
 
 base_dirs = [".", ".config/"]
-ignore = [".git", ".gitmodules", "bootstrap.py"]
+ignore = [".git", ".gitignore", ".gitmodules", "bootstrap.py"]
 
 for d in base_dirs:
     print "> Entering " + d
