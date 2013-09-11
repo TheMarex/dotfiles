@@ -79,6 +79,9 @@ vicious.register(cpuwidget,
 --
 -- datewidget = delightful.widgets.datetime:load({})[1]
 datewidget = awful.widget.textclock()
+datetooltip = awful.tooltip( { objects = { datewidget } })
+months = awful.util.pread("cal -h")
+datetooltip:set_text(months)
 
 -- Left arrow widget
 larrow = wibox.widget.textbox()
