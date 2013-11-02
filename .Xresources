@@ -20,5 +20,8 @@ URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintsslight
+
 #include "/home/patrick/.config/colors/current"
 
