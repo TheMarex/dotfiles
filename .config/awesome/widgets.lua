@@ -87,6 +87,10 @@ vicious.register(cpuwidget,
 datewidget = awful.widget.textclock()
 datetooltip = awful.tooltip( { objects = { datewidget } })
 months = awful.util.pread("cal -h")
+-- Arch and Ubuntu use different cal utils with different parameters
+if months:find("help") then
+    months = awful.util.pread("cal --color=never")
+end
 datetooltip:set_text(months)
 
 -- Left arrow widget
