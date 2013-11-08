@@ -3,10 +3,8 @@
 --
 
 
-local f = io.popen("ip link")
-local network_list = f:read("*all")
-f:close()
-has_wifi = (network_list:match("wlan%d") ~= nil)
+network_list = awful.util.pread("ip link")
+has_wifi = (network_list:match("wlan") ~= nil)
 
 -- Create  main menu
 --
@@ -217,8 +215,8 @@ volumewidgets, volumeicons = delightful.widgets.pulseaudio:load({})
 -- Network
 --
 networkstr = colorize("LAN: ", whi) .. colorize('↓ ${eth0 down_kb}', blu) .. " "  .. colorize('↑ ${eth0 up_kb}', yel)
-if has_wifit then
-    networkstr = networkstr .. colorize("WLAN: ", whi) .. colorize('↓ ${wlan0 down_kb}', blu) .. " "  .. colorize('↑ ${wlan0 up_kb}', yel)
+if has_wifi then
+    networkstr = networkstr .. " | "  .. colorize("WLAN: ", whi) .. colorize('↓ ${wlan0 down_kb}', blu) .. " "  .. colorize('↑ ${wlan0 up_kb}', yel)
 end
 networkwidget = wibox.widget.textbox()
 vicious.register(networkwidget, vicious.widgets.net, networkstr, 2)
