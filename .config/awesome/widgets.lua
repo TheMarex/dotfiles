@@ -2,6 +2,12 @@
 -- Setup widgets
 --
 
+
+local f = io.popen("ip link")
+local network_list = f:read("*all")
+f:close()
+has_wifi = (network_list:match("wlan%d") ~= nil)
+
 -- Create  main menu
 --
 mymainmenu = awful.menu(
@@ -157,11 +163,13 @@ vicious.register(memwidget, vicious.widgets.mem,
 -- Wifi
 --
 wifiwidget = wibox.widget.textbox()
-vicious.register(wifiwidget, vicious.widgets.wifi,
-	function (widget, args)
-        return colorize(args["{ssid}"] .. ": ", whi) .. colorize(args["{link}"], blu)
-	end
-	, 2, "wlan0")
+if has_wifi then
+    vicious.register(wifiwidget, vicious.widgets.wifi,
+        function (widget, args)
+            return colorize(args["{ssid}"] .. ": ", whi) .. colorize(args["{link}"], blu)
+        end
+        , 2, "wlan0")
+end
 
 -- MPD
 --
@@ -204,10 +212,12 @@ volumewidgets, volumeicons = delightful.widgets.pulseaudio:load({})
 
 -- Network
 --
+networkstr = colorize("LAN: ", whi) .. colorize('↓ ${eth0 down_kb}', blu) .. " "  .. colorize('↑ ${eth0 up_kb}', yel)
+if has_wifit then
+    networkstr = networkstr .. colorize("WLAN: ", whi) .. colorize('↓ ${wlan0 down_kb}', blu) .. " "  .. colorize('↑ ${wlan0 up_kb}', yel)
+end
 networkwidget = wibox.widget.textbox()
-vicious.register(networkwidget, vicious.widgets.net,
-    colorize('↓ ${wlan0 down_kb}', blu) .. " "  ..colorize('↑ ${wlan0 up_kb}', yel)
-	, 2)
+vicious.register(networkwidget, vicious.widgets.net, networkstr, 2)
 
 -- Battery
 --
@@ -245,12 +255,16 @@ for s = 1, screen.count() do
 
     top_right:add(larrow)
     top_right:add(layout_box[s])
-    top_right:add(larrow)
-    top_right:add(batteryicons[1])
+    if batteryicons ~= nil then
+        top_right:add(larrow)
+        top_right:add(batteryicons[1])
+    end
     top_right:add(larrow)
     top_right:add(volumeicons[1])
-    top_right:add(larrow)
-    top_right:add(wifiwidget)
+    if has_wifi then
+        top_right:add(larrow)
+        top_right:add(wifiwidget)
+    end
     top_right:add(larrow)
     top_right:add(kbdcfg.widget)
     top_right:add(larrow)

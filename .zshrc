@@ -54,7 +54,8 @@ function umedia () {
 function test_awesome () {
 	Xephyr -s 1024x800 :1 &
 	sleep 1
-	DISPLAY=:1 $1 -c $2
+#	DISPLAY=:1 $1 -c $2
+    DISPLAY=:1 awesome
 }
 
 function clr ()
