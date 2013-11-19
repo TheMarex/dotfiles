@@ -36,17 +36,17 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/patrick/.cabal/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin
+export PATH=/home/patrick/bin:/home/patrick/.cabal/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin
 
+alias cln='urxvt -cd `pwd` &'
 alias grep='grep --color=always'
 alias ll='ls -g -o --human-readable --color=auto'
 alias la='ls -a --color=auto'
 alias py='python'
 alias ipy='ipython --no-confirm-exit --no-banner'
 alias vt='vim -p'
-alias agi='sudo apt-get install'
 alias runs='ps -ef | grep'
-alias config='git --git-dir=$HOME/.config.git/'
+alias config='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles'
 function umedia () {
 	sudo umount "/media/$1"
 }
