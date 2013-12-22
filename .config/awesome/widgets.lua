@@ -5,6 +5,8 @@
 
 network_list = awful.util.pread("ip link")
 has_wifi = (network_list:match("wlan") ~= nil)
+larrow_symbol = " ❬ "
+rarrow_symbol = " ❭ "
 
 -- Create  main menu
 --
@@ -93,11 +95,11 @@ datetooltip:set_text(months)
 
 -- Left arrow widget
 larrow = wibox.widget.textbox()
-larrow:set_markup(" ❬ ")
+larrow:set_markup(larrow_symbol)
 
 -- Right arrow widget
 rarrow = wibox.widget.textbox()
-rarrow:set_markup(" ❭ ")
+rarrow:set_markup(rarrow_symbol)
 
 -- Spacer widget
 spacer = wibox.widget.imagebox()
@@ -221,6 +223,26 @@ end
 networkwidget = wibox.widget.textbox()
 vicious.register(networkwidget, vicious.widgets.net, networkstr, 2)
 
+-- Active connections
+--
+conwidget = wibox.widget.textbox()
+tm = timer({timeout = 5})
+tm:connect_signal("timeout",
+    function()
+        cons = awful.util.pread("nmcli --fields name -t con status")
+        con_str = ""
+        for c in string.gmatch(cons, "([%w]+)\n") do
+            if con_str:len() > 0 then
+                con_str = con_str .. colorize(" | ", whi)
+            end
+            con_str = con_str .. c
+        end
+        conwidget:set_markup(colorize("Cons: ", whi) .. con_str)
+    end
+)
+tm:emit_signal("timeout")
+tm:start()
+
 -- Battery
 --
 batterywidgets, batteryicons = delightful.widgets.battery:load({})
@@ -289,6 +311,8 @@ for s = 1, screen.count() do
     bottom_left:add(memwidget)
     bottom_left:add(rarrow)
     bottom_left:add(networkwidget)
+    bottom_left:add(rarrow)
+    bottom_left:add(conwidget)
     bottom_left:add(rarrow)
     bottom_left:add(prompt_box[s])
 
