@@ -4,21 +4,12 @@
 [submodule ".vim/bundle/molakai"]
 	path = .vim/bundle/molakai
 	url = git://github.com/tomasr/molokai.git
-[submodule ".vim/bundle/vim-powerline"]
-	path = .vim/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule ".vim/bundle/vim-trailing-whitespace"]
 	path = .vim/bundle/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
 [submodule ".vim/bundle/vim-vividchalk"]
 	path = .vim/bundle/vim-vividchalk
 	url = git://github.com/tpope/vim-vividchalk.git
-[submodule ".config/awesome/shifty"]
-	path = .config/awesome/shifty
-	url = git://github.com/bioe007/awesome-shifty.git
-[submodule ".config/awesome/vicious"]
-	path = .config/awesome/vicious
-	url = http://git.sysphere.org/vicious
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
