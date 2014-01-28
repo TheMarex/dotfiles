@@ -55,6 +55,7 @@ autocmd BufEnter *.hpp set ai sw=4 ts=4
 autocmd BufEnter *.h set ai sw=4 ts=4
 autocmd BufEnter *.ino set ai sw=4 ts=4
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+autocmd BufEnter *.pp set ai
 
 " Compiz
 autocmd BufEnter */Compiz/*/*.cpp set ai sw=4 sts=4 ts=8
