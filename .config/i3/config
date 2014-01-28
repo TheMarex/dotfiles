@@ -66,6 +66,7 @@ workspace $ws10 output LVDS1
 workspace $ws11 output LVDS1
 
 # App config
+assign [title="^ranger.*"] "6: files"
 assign [class="^URxvt$"] "1: terminal"
 assign [class="^Chromium-browser$"] "2: web"
 assign [class="^Firefox$"] "2: web"
