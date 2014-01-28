@@ -39,8 +39,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/home/patrick/.local/bin:/home/patrick/.cabal/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin
 
 # powerline theme
-if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ -r ~/.local/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
 alias cln='urxvt -cd `pwd` &'

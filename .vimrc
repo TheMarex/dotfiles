@@ -32,7 +32,7 @@ set ssop-=options
 highlight Comment cterm=italic
 highlight ColorColumn ctermbg=0
 
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=$HOME/.local/lib/python/site-packages/powerline/bindings/vim/
 set laststatus=2
 "let g:Powerline_symbols='unicode'
 "let g:Powerline_symbols='fancy'
