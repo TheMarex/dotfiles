@@ -6,7 +6,7 @@ import os.path as path
 home = os.path.expanduser("~/")
 dotfiles = os.path.expanduser("~/.dotfiles")
 
-base_dirs = [".", ".config/"]
+base_dirs = [".", ".config/", ".local/bin/"]
 ignore = [".git", ".gitignore", ".gitmodules", "bootstrap.py"]
 
 for d in base_dirs:

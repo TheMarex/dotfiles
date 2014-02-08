@@ -41,6 +41,10 @@ bindsym $mod+d exec dmenu_run
 #
 bindsym $mod+Menu exec quickswitch.py
 
+# Audio
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -- -5%
+
 set $ws1 "1: terminal"
 set $ws2 "2: web"
 set $ws3 "3: im"
