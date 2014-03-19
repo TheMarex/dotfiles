@@ -29,6 +29,9 @@ let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
 set ssop-=options
 
+nmap <C-P> :bp<CR>
+nmap <C-N> :bn<CR>
+
 highlight Comment cterm=italic
 highlight ColorColumn ctermbg=0
 
