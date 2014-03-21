@@ -41,7 +41,8 @@ set laststatus=2
 "let g:Powerline_symbols='fancy'
 
 "set listchars=tab:\|·,trail:·
-set listchars=tab:»·,trail:·
+set listchars=tab:·\ ,trail:·
+"set listchars=tab:»·,trail:·
 set list
 
 " Defaults

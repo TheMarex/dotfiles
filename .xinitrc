@@ -2,6 +2,8 @@
 
 HOSTNAME=$(hostname)
 
+redshift -l 49.822923:6.749668 -b 1.0:0.8 &
+
 if [ "$HOSTNAME" = "patrick-desktop" ]; then
 	echo "Setting destkop config..."
 	xset -dpms
