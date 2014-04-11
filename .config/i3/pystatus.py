@@ -42,20 +42,21 @@ status.register("load")
 #
 # This would look like this:
 # Discharging 6h:51m
-#status.register("battery",
-#    format="{status} {remaining:%E%hh:%Mm}",
-#    alert=True,
-#    alert_percentage=5,
-#    status={
-#        "DIS":  "Discharging",
-#        "CHR":  "Charging",
-#        "FULL": "Bat full",
-#    },)
+status.register("battery",
+    format="{status} {remaining: %hh:%Mm}",
+    alert=True,
+    alert_percentage=10,
+    path="/sys/class/power_supply/BAT1/uevent",
+    status={
+        "DIS": "Battery: ↓",
+        "CHR": "Battery: ↑",
+        "FULL": "Battery: =",
+    },)
 
 # Displays whether a DHCP client is running
-status.register("runwatch",
-    name="DHCP",
-    path="/var/run/dhclient*.pid",)
+#status.register("runwatch",
+#    name="DHCP",
+#    path="/var/run/dhclient*.pid",)
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
@@ -74,7 +75,7 @@ status.register("network",
 # Note: requires both netifaces-py3 and basiciw
 #status.register("wireless",
 #    interface="wlan0",
- #   format_up="{essid} {quality:03.0f}%",)
+#    format_up="{essid} {quality:03.0f}%",)
 
 # Shows disk usage of /
 # Format:
@@ -96,12 +97,12 @@ status.register("pulseaudio",
 # Shows mpd status
 # Format:
 # Cloud connected▶Reroute to Remain
-status.register("mpd",
-    format="{status} {artist} : {title} : {album}",
-    status={
-        "pause": "▷",
-        "play": "▶",
-        "stop": "◾",
-    },)
+#status.register("mpd",
+#    format="{status} {artist} : {title} : {album}",
+#    status={
+#        "pause": "▷",
+#        "play": "▶",
+#        "stop": "◾",
+#    },)
 
 status.run()
