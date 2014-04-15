@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import subprocess
+import os.path
 
 from i3pystatus import Status
 
@@ -11,7 +12,8 @@ status = Status(standalone=True)
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-    format="%a %-d %b %X",)
+    format="%a %-d %b %X",
+    color="i3Bar")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
@@ -42,16 +44,18 @@ status.register("load")
 #
 # This would look like this:
 # Discharging 6h:51m
-status.register("battery",
-    format="{status} {remaining: %hh:%Mm}",
-    alert=True,
-    alert_percentage=10,
-    path="/sys/class/power_supply/BAT1/uevent",
-    status={
-        "DIS": "Battery: ↓",
-        "CHR": "Battery: ↑",
-        "FULL": "Battery: =",
-    },)
+
+if os.path.exists("/sys/class/power_supply/BAT1/uevent"):
+    status.register("battery",
+        format="{status} {remaining: %hh:%Mm}",
+        alert=True,
+        alert_percentage=10,
+        path="/sys/class/power_supply/BAT1/uevent",
+        status={
+            "DIS": "Battery: ↓",
+            "CHR": "Battery: ↑",
+            "FULL": "Battery: =",
+        },)
 
 # Displays whether a DHCP client is running
 #status.register("runwatch",
@@ -86,7 +90,7 @@ status.register("disk",
 
 # Memory
 status.register("mem",
-    format="Mem: {used_mem}/{total_mem}MB [{avail_mem}MB]",)
+    format="Mem: {used_mem:.0f}/{total_mem:.0f}MB [{avail_mem:.0f}MB]",)
 
 # Shows pulseaudio default sink volume
 #
