@@ -29,8 +29,8 @@ let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
 set ssop-=options
 
-nmap <C-P> :bp<CR>
-nmap <C-N> :bn<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 highlight Comment cterm=italic
 highlight ColorColumn ctermbg=0
@@ -61,22 +61,11 @@ autocmd BufEnter *.ino set ai sw=4 ts=4
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufEnter *.pp set ai
 
-" Compiz
-autocmd BufEnter */Compiz/*/*.cpp set ai sw=4 sts=4 ts=8
-autocmd BufEnter */Compiz/*/*.h set ai sw=4 sts=4 ts=8
-autocmd BufEnter */Compiz/*/*.c set ai sw=4 sts=4 ts=8
-autocmd BufEnter simple-ccsm.in set ai et ts=4 sw=4 sts=4
-autocmd BufEnter sharez.in set ai et ts=4 sw=4 sts=4
-
 " alaCarte
-autocmd BufEnter */PSE/*/*.cpp set ai sw=4 ts=4 syntax=cpp11
+autocmd BufEnter */alacarte/*/*.cpp set ai sw=4 ts=4 syntax=cpp11
 
-" Custom filetype support
-autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala            setfiletype vala
-au BufRead,BufNewFile *.vapi            setfiletype vala
-au BufRead,BufNewFile *.s               setfiletype mips
+let g:ycm_autoclose_preview_window_after_insertion=0
+let g:ycm_confirm_extra_conf=0
 
 " Keybinding
 call togglebg#map("<F5>")
