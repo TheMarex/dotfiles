@@ -9,6 +9,7 @@ syntax on
 "colorscheme molokai
 set background=dark
 let g:solarized_bold=1
+let g:syntastic_full_redraws=1
 colorscheme solarized
 set ignorecase
 set smartcase
@@ -63,6 +64,11 @@ autocmd BufEnter *.pp set ai
 
 " alaCarte
 autocmd BufEnter */alacarte/*/*.cpp set ai sw=4 ts=4 syntax=cpp11
+" osrm
+autocmd BufEnter */osrm/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */osrm/*.hpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */osrm/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */osrm/*/*.hpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 
 let g:ycm_autoclose_preview_window_after_insertion=0
 let g:ycm_confirm_extra_conf=0
