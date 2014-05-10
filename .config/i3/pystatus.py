@@ -3,8 +3,20 @@
 
 import subprocess
 import os.path
+import socket
 
 from i3pystatus import Status
+
+configs = {}
+configs["patrick-x240"] = {
+    'wlan_interface': "wlp3s0",
+    'ethernet_interface': "enp0s25"
+}
+configs["patrick-dekstop"] = {
+    'ethernet_interface': "eth0"
+}
+
+config = configs[socket.gethostname()]
 
 status = Status(standalone=True)
 
@@ -69,17 +81,19 @@ if os.path.exists("/sys/class/power_supply/BAT1/uevent"):
 # (defaults of format_down and color_down)
 #
 # Note: the network module requires PyPI package netifaces-py3
-status.register("network",
-    interface="eth0",
-    format_up="eth0: {v4cidr}",)
+if 'ethernet_interface' in config:
+    status.register("network",
+        interface=config['ethernet_interface'],
+        format_up=(config['ethernet_interface'] + ": {v4cidr}"),)
 
 # Has all the options of the normal network and adds some wireless specific things
 # like quality and network names.
 #
 # Note: requires both netifaces-py3 and basiciw
-#status.register("wireless",
-#    interface="wlan0",
-#    format_up="{essid} {quality:03.0f}%",)
+if 'wlan_interface' in config:
+    status.register("wireless",
+        interface=config['wlan_interface'],
+        format_up="{essid} {quality:03.0f}%",)
 
 # Shows disk usage of /
 # Format:
