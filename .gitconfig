@@ -1,0 +1,23 @@
+[author]
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	email = patrick.niklaus@student.kit.edu
+	name = Patrick Niklaus
+[push]
+	default = simple
+[alias]
+	hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	g = grep --break --heading --line-number
+[core]
+	excludesfile = /home/patrick/.gitignore
+[credential]
+    helper = gnomekeyring
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[difftool]
+	prompt = false
+[grep]
+	lineNumber = true

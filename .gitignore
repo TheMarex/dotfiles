@@ -1,5 +1,59 @@
-*/**/*.pyo
-.config/ranger/history
-.config/ranger/bookmarks
-.config/colors/current
-.vim/.netrwhist
+# Compiled Object files
+*.slo
+*.lo
+*.ko
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.so.*
+*.dylib
+
+# Compiled Static libraries
+*.dll
+*.lai
+*.la
+*.a
+*.pyc
+*.lib
+
+# Executables
+*.out
+
+# Latex
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdy
+*.tdo
+
+**/build/**
+**/debug/**
+**/release/**
+
