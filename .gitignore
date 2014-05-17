@@ -1,8 +1,13 @@
+.config/colors/current
+.config/custom/font
+.vim/.netrwhist
+
 # Compiled Object files
 *.slo
 *.lo
 *.ko
 *.o
+*.pyo
 
 # Compiled Dynamic libraries
 *.so
