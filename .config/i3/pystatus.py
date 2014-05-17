@@ -12,7 +12,7 @@ configs["patrick-x240"] = {
     'wlan_interface': "wlp3s0",
     'ethernet_interface': "enp0s25"
 }
-configs["patrick-dekstop"] = {
+configs["patrick-desktop"] = {
     'ethernet_interface': "eth0"
 }
 
