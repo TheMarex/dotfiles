@@ -63,8 +63,10 @@ autocmd BufEnter */alacarte/*/*.cpp set ai sw=4 ts=4 syntax=cpp11
 " osrm
 autocmd BufEnter */osrm/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*.hpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */osrm/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*/*.hpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */osrm/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
 
 let g:ycm_autoclose_preview_window_after_insertion=0
 let g:ycm_confirm_extra_conf=0
