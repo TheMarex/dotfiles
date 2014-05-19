@@ -28,6 +28,7 @@ set nocompatible
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
 set ssop-=options
+set completeopt-=preview
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -67,6 +68,11 @@ autocmd BufEnter */osrm/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*/*.hpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
+
+autocmd BufEnter */humanoidlocomotion/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */humanoidlocomotion/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */simdynamicsviewer/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */simdynamicsviewer/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 
 let g:ycm_autoclose_preview_window_after_insertion=0
 let g:ycm_confirm_extra_conf=0
