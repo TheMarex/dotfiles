@@ -1,4 +1,6 @@
 .config/colors/current
+.config/ranger/history
+.config/ranger/bookmarks
 .config/custom/font
 .vim/.netrwhist
 
