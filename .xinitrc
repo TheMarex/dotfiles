@@ -2,6 +2,7 @@
 
 HOSTNAME=$(hostname)
 
+xrdb ~/.Xresources
 
 if [ "$HOSTNAME" = "patrick-desktop" ]; then
 	echo "Setting destkop config..."
@@ -15,6 +16,5 @@ elif [ "$HOSTNAME" = "patrick-laptop" ]; then
 	redshift -l 49.822923:6.749668 -b 1.0:0.8 &
 fi
 
-xrdb ~/.Xresources
 exec ~/.local/bin/set-gnome-bg
 
