@@ -57,16 +57,21 @@ status.register("load")
 # This would look like this:
 # Discharging 6h:51m
 
-if os.path.exists("/sys/class/power_supply/BAT1/uevent"):
+batteries = [
+    "/sys/class/power_supply/BAT0/uevent",
+    "/sys/class/power_supply/BAT1/uevent"
+]
+
+for i, bat in enumerate(batteries):
     status.register("battery",
         format="{status} {remaining: %hh:%Mm}",
         alert=True,
         alert_percentage=10,
-        path="/sys/class/power_supply/BAT1/uevent",
+        path=bat,
         status={
-            "DIS": "Battery: ↓",
-            "CHR": "Battery: ↑",
-            "FULL": "Battery: =",
+            "DIS": "Battery %i: ↓" % i,
+            "CHR": "Battery %i: ↑" % i,
+            "FULL": "Battery %i: =" %i,
         },)
 
 # Displays whether a DHCP client is running

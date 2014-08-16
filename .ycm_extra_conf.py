@@ -75,6 +75,8 @@ flags = [
 '-I',
 './include',
 '-I',
+'/include/Eigen',
+'-I',
 './ClangCompleter',
 '-isystem',
 '/home/patrick/Code/simox',

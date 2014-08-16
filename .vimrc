@@ -40,7 +40,6 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 
 set listchars=tab:·\ ,trail:·
-"set listchars=tab:»·,trail:·
 set list
 
 " Defaults
@@ -58,6 +57,7 @@ autocmd BufEnter *.h set ai sw=4 ts=4
 autocmd BufEnter *.ino set ai sw=4 ts=4
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufEnter *.pp set ai
+autocmd BufEnter *.js set ai et sw=4 ts=4 sts=4
 
 " alaCarte
 autocmd BufEnter */alacarte/*/*.cpp set ai sw=4 ts=4 syntax=cpp11
@@ -80,36 +80,14 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " Keybinding
 call togglebg#map("<F5>")
-vmap <C-c> "*y
-vmap <C-v> "*p
 nnoremap <C-h> <C-w>h
 nnoremap <F3> :NumbersToggle<CR>
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
 nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
-nnoremap g[ :cs find 3 <C-R>=expand("<cword>")<CR><CR>
-nnoremap g/ :cs find 0 <C-R>=expand("<cword>")<CR><CR>
+"nnoremap g[ :cs find 3 <C-R>=expand("<cword>")<CR><CR>
+"nnoremap g/ :cs find 0 <C-R>=expand("<cword>")<CR><CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-map <F4> :TlistToggle<cr>
-map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
-map <F9> :!/usr/bin/cscope -uUR<cr>
-set tags=./tags;/
+"let g:UltiSnipsExpandTrigger="<c-m>"
+"let g:UltiSnipsJumpForwardTrigger="<c-m>"
 
-if has("cscope")
-  set csprg=~/bin/cscope
-  set csto=0
-  set cst
-  set nocsverb
-  " add any database in current directory
-  if filereadable("cscope.out")
-    cs add cscope.out
-    " else add database pointed to by environment
-  elseif $CSCOPE_DB != ""
-    cs add $CSCOPE_DB
-  endif
-endif
