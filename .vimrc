@@ -34,6 +34,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
 highlight ColorColumn ctermbg=0
+highlight SpellBad cterm=underline ctermfg=red
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -43,7 +44,6 @@ set listchars=tab:·\ ,trail:·
 set list
 
 " Defaults
-autocmd BufEnter *.html set ai sw=2 ts=2
 autocmd BufEnter *.c set ai sw=4 ts=4
 autocmd BufEnter *.py set ai et ts=4 sw=4 sts=4
 autocmd BufEnter *.tex set ai et ts=2 sw=2 sts=2
@@ -57,7 +57,9 @@ autocmd BufEnter *.h set ai sw=4 ts=4
 autocmd BufEnter *.ino set ai sw=4 ts=4
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufEnter *.pp set ai
-autocmd BufEnter *.js set ai et sw=4 ts=4 sts=4
+autocmd BufEnter *.js set ai et sw=2 ts=2 sts=2
+autocmd BufEnter *.json set ai et sw=2 ts=2 sts=2
+autocmd BufEnter *.html set ai et sw=2 ts=2 sts=2
 
 " alaCarte
 autocmd BufEnter */alacarte/*/*.cpp set ai sw=4 ts=4 syntax=cpp11
@@ -69,6 +71,10 @@ autocmd BufEnter */osrm/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*/*.hpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */osrm/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
 
+autocmd BufEnter */simox/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */simox/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */libbipedal/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
+autocmd BufEnter */libbipedal/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */humanoidlocomotion/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */humanoidlocomotion/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cpp11
 autocmd BufEnter */simdynamicsviewer/*/*.h set ai et sw=4 ts=4 sts=4 syntax=cpp11
@@ -87,6 +93,7 @@ nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
 "nnoremap g[ :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 "nnoremap g/ :cs find 0 <C-R>=expand("<cword>")<CR><CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+nnoremap <F9> :setlocal spell spelllang=en_us<CR>
 
 "let g:UltiSnipsExpandTrigger="<c-m>"
 "let g:UltiSnipsJumpForwardTrigger="<c-m>"

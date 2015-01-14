@@ -78,6 +78,7 @@ for i, bat in enumerate(batteries):
 #status.register("runwatch",
 #    name="DHCP",
 #    path="/var/run/dhclient*.pid",)
+status.register("runwatch", name="tinc", path="/var/run/tinc.home.pid")
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
@@ -105,11 +106,11 @@ if 'wlan_interface' in config:
 # 42/128G [86G]
 status.register("disk",
     path="/",
-    format="Disk: {used}/{total}G [{avail}G]",)
+    format="Disk: {avail:.0f}G",)
 
 # Memory
 status.register("mem",
-    format="Mem: {used_mem:.0f}/{total_mem:.0f}MB [{avail_mem:.0f}MB]",)
+    format="Mem: {avail_mem:.0f}MB",)
 
 # Shows pulseaudio default sink volume
 #

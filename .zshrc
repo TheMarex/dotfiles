@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
+#ZSH_THEME="terminalparty"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -29,7 +30,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting npm)
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
@@ -57,11 +58,12 @@ function umedia () {
 	sudo umount "/media/$1"
 }
 
-function test_awesome () {
-	Xephyr -screen 1200x800 :1 &
-	sleep 1
-#	DISPLAY=:1 $1 -c $2
-    DISPLAY=:1 awesome
+function setup_ros () {
+	source /opt/ros/indigo/setup.zsh
+}
+
+function setup_catkin () {
+	catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so
 }
 
 function clr ()
@@ -69,6 +71,8 @@ function clr ()
 	ln -sf ~/.config/colors/$1 ~/.config/colors/current
 	xrdb ~/.Xresources
 }
+
+source "$(npm root -g)/mapbox-cli/mapbox.sh"
 
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"
