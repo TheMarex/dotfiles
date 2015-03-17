@@ -43,6 +43,10 @@ set laststatus=2
 set listchars=tab:·\ ,trail:·
 set list
 
+augroup filetype
+  au! BufRead,BufNewFile *.ll     set filetype=llvm
+augroup END
+
 " Defaults
 autocmd BufEnter *.c set ai sw=4 ts=4
 autocmd BufEnter *.py set ai et ts=4 sw=4 sts=4

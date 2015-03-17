@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/vim-glsl"]
 	path = .vim/bundle/vim-glsl
 	url = https://github.com/tikhomirov/vim-glsl
+[submodule ".vim/bundle/vim-llvm"]
+	path = .vim/bundle/vim-llvm
+	url = git@github.com:Superbil/llvm.vim.git
