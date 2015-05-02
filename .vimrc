@@ -12,6 +12,10 @@ let g:solarized_bold=1
 " toogles between light and dark
 call togglebg#map("<F5>")
 
+" Airline settings
+"
+let g:airline_powerline_fonts = 1
+
 " Ignore this files while doing file name completion
 set wildignore+=*/tmp/*,*.so,*.swp
 
