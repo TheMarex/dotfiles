@@ -24,3 +24,7 @@ set wildignore+=*/tmp/*,*.so,*.swp
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
+" YouCompleteMe configuration
+"
+let g:ycm_confirm_extra_conf=0
+
