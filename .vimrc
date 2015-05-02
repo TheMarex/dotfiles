@@ -4,6 +4,11 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Theme settings
+set background=dark
+colorscheme solarized
+let g:solarized_bold=1
+
 " Ignore this files while doing file name completion
 set wildignore+=*/tmp/*,*.so,*.swp
 
