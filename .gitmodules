@@ -1,0 +1,3 @@
+[submodule ".vim/bundle/vim-ycm"]
+	path = .vim/bundle/vim-ycm
+	url = git@github.com:Valloric/YouCompleteMe.git
