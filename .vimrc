@@ -1,8 +1,13 @@
 " Vim package management
 execute pathogen#infect()
 
+" General settings
+"
+set nocompatible
 syntax on
 filetype plugin indent on
+set cc=80
+set number
 
 " Theme settings
 "
