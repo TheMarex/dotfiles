@@ -86,7 +86,7 @@ autocmd BufEnter */simdynamicsviewer/*/*.cpp set ai et sw=4 ts=4 sts=4 syntax=cp
 
 let g:ycm_autoclose_preview_window_after_insertion=0
 let g:ycm_confirm_extra_conf=0
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " Keybinding
 call togglebg#map("<F5>")
