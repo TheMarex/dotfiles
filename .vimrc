@@ -12,6 +12,10 @@ let g:solarized_bold=1
 " toogles between light and dark
 call togglebg#map("<F5>")
 
+" Show tabs vs spaces
+set listchars=tab:·\ ,trail:·
+set list
+
 " Airline settings
 "
 let g:airline_powerline_fonts = 1
@@ -27,4 +31,10 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " YouCompleteMe configuration
 "
 let g:ycm_confirm_extra_conf=0
+
+" Defaults
+"
+set ai et ts=4 sw=4 sts=4
+autocmd BufEnter *.{js,json,geojson} set ai et sw=2 ts=2 sts=2
+autocmd BufEnter *.html set ai et sw=2 ts=2 sts=2
 
