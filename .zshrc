@@ -44,6 +44,7 @@ if [[ -r ~/.local/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh 
     source ~/.local/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
+alias xmake='make -j$(nproc)'
 alias cln='urxvt -cd `pwd` &'
 alias grep='grep --color=always'
 alias ll='ls -g -o --human-readable --color=auto'

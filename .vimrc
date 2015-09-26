@@ -8,6 +8,12 @@ syntax on
 filetype plugin indent on
 set cc=80
 set number
+set smartcase
+set incsearch
+set hlsearch
+set mouse=a
+set guioptions+=a
+set relativenumber
 
 " Theme settings
 "
@@ -26,10 +32,11 @@ set list
 let g:airline_powerline_fonts = 1
 
 " Ignore this files while doing file name completion
-set wildignore+=*/tmp/*,*.so,*.swp
+set wildignore+=*/tmp/*,*.so,*.swp,*.o
 
 " Ctrl-P configuration
 "
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
