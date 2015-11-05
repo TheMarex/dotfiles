@@ -24,8 +24,7 @@ status = Status(standalone=True)
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-    format="%a %-d %b %X",
-    color="i3Bar")
+    format="%a %-d %b %T")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
@@ -97,7 +96,7 @@ if 'ethernet_interface' in config:
 #
 # Note: requires both netifaces-py3 and basiciw
 if 'wlan_interface' in config:
-    status.register("wireless",
+    status.register("network",
         interface=config['wlan_interface'],
         format_up="{essid} {quality:03.0f}%",)
 
