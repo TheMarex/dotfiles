@@ -72,7 +72,7 @@ function clr ()
 	xrdb ~/.Xresources
 }
 
-source "$(npm root -g)/mapbox-cli/mapbox.sh"
+source "$(npm root -g)/mbxcli/mapbox.sh"
 
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"

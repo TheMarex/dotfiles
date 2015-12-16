@@ -52,6 +52,7 @@ flags = [
 '-I', '/usr/local/include',
 '-I', '../../cglib/include',
 '-I', '/usr/include/eigen3',
+'-I', './node_modules/nan',
 ]
 
 

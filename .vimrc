@@ -50,3 +50,6 @@ set ai et ts=4 sw=4 sts=4
 autocmd BufEnter *.{js,json,geojson} set ai et sw=2 ts=2 sts=2
 autocmd BufEnter *.html set ai et sw=2 ts=2 sts=2
 
+" Clang format
+"
+let g:clang_format#detect_style_file=1
