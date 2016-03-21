@@ -219,6 +219,8 @@ mode "workspace" {
 mode "output" {
         bindsym Left move workspace to output left
         bindsym Right move workspace to output right
+        bindsym Up move workspace to output above
+        bindsym Down move workspace to output below
 
         bindsym Escape mode "default"
 }

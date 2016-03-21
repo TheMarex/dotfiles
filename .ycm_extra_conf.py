@@ -48,6 +48,7 @@ flags = [
 '-I', './src',
 '-I', './include',
 '-I', './third_party',
+'-I', './third_party/libosmium/include',
 '-I', '/usr/include',
 '-I', '/usr/local/include',
 '-I', '../../cglib/include',
