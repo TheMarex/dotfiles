@@ -72,9 +72,21 @@ function clr ()
 	xrdb ~/.Xresources
 }
 
-source "$(npm root -g)/mbxcli/mapbox.sh"
 
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"
 #export TERM="rxvt-unicode"
 export EDITOR="vim"
+export GPG_TTY=$(tty)
+
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+. /home/patrick/.ssh/agent.env
+
+# added by travis gem
+[ -f /home/patrick/.travis/travis.sh ] && source /home/patrick/.travis/travis.sh
+
+nvm use 4
+source "$(npm root -g)/mbxcli/mapbox.sh"
+
+source /home/patrick/.py3/bin/activate

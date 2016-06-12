@@ -16,5 +16,9 @@ elif [ "$HOSTNAME" = "patrick-x240" ]; then
 	redshift -l 49.822923:6.749668 -b 1.0:1.0 &
 fi
 
+ssh-agent > /home/patrick/.ssh/agent.env
+chmod 0600 /home/patrick/.ssh/agent.env
+ssh-add
+
 exec ~/.local/bin/set-gnome-bg
 

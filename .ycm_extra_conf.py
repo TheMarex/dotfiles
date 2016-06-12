@@ -29,7 +29,7 @@
 # For more information, please refer to <http://unlicense.org/>
 
 import os
-import ycm_core
+#import ycm_core
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
@@ -48,6 +48,7 @@ flags = [
 '-I', './src',
 '-I', './include',
 '-I', './third_party',
+'-I', './unit_tests',
 '-I', './third_party/libosmium/include',
 '-I', '/usr/include',
 '-I', '/usr/local/include',

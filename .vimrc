@@ -37,12 +37,14 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.o
 " Ctrl-P configuration
 "
 let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|dist|test)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_max_files=0
 
 " YouCompleteMe configuration
 "
 let g:ycm_confirm_extra_conf=0
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 
 " Defaults
 "
