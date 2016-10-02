@@ -27,6 +27,8 @@ call togglebg#map("<F5>")
 set listchars=tab:·\ ,trail:·
 set list
 
+hi SpellBad cterm=underline ctermfg=red
+
 " Airline settings
 "
 let g:airline_powerline_fonts = 1

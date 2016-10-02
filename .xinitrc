@@ -18,7 +18,6 @@ fi
 
 ssh-agent > /home/patrick/.ssh/agent.env
 chmod 0600 /home/patrick/.ssh/agent.env
-ssh-add
 
 exec ~/.local/bin/set-gnome-bg
 

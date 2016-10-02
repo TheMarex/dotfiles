@@ -43,6 +43,8 @@ if [[ -r ~/.local/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh 
     source ~/.local/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
+source /usr/share/nvm/init-nvm.sh
+
 alias xmake='make -j$(nproc)'
 alias cln='urxvt -cd `pwd` &'
 alias grep='grep --color=always'
@@ -54,17 +56,6 @@ alias ipynote='ipython notebook'
 alias vt='vim -p'
 alias runs='ps -ef | grep'
 alias config='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles'
-function umedia () {
-	sudo umount "/media/$1"
-}
-
-function setup_ros () {
-	source /opt/ros/indigo/setup.zsh
-}
-
-function setup_catkin () {
-	catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so
-}
 
 function clr ()
 {

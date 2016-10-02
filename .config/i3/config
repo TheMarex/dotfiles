@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font pango:Source Code Pro For Powerline 10
+font pango:Source Code Pro For Powerline 0
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -26,50 +26,46 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# start filemanager
-bindsym $mod+End exec "urxvt -e ranger"
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-#
-bindsym $mod+Menu exec quickswitch.py
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 
 # Audio
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -- -5%
-bindsym XF86AudioPlay exec ~/.local/bin/mpc_toggle
 bindsym XF86Tools exec gnome-control-center sound
 
 set $ws1 "1: terminal"
 set $ws2 "2: web"
 set $ws3 "3: im"
 set $ws4 "4: music"
-set $ws5 "5: office"
+set $ws5 "5: docs"
 set $ws6 "6: files"
 set $ws7 "7: video"
 set $ws8 "8: torrent"
 set $ws9 "9: image"
-set $ws10 "10: vm"
-set $ws11 "11: update"
 
-workspace $ws1  output LVDS1
-workspace $ws2  output LVDS1
-workspace $ws3  output LVDS1
-workspace $ws4  output LVDS1
-workspace $ws5  output LVDS1
-workspace $ws6  output LVDS1
-workspace $ws7  output LVDS1
-workspace $ws8  output LVDS1
-workspace $ws9  output LVDS1
-workspace $ws10 output LVDS1
-workspace $ws11 output LVDS1
+#new_window none
+hide_edge_borders both
+
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
+
+workspace $ws1  output eDP1
+workspace $ws2  output eDP1
+workspace $ws3  output eDP1
+workspace $ws4  output eDP1
+workspace $ws5  output eDP1
+workspace $ws6  output eDP1
+workspace $ws7  output eDP1
+workspace $ws8  output eDP1
+workspace $ws9  output eDP1
 
 # App config
 assign [title="^ranger.*"] "6: files"
@@ -79,18 +75,16 @@ assign [class="^Firefox$"] "2: web"
 assign [class="^Pidgin$"] "3: im"
 assign [class="^HipChat$"] "3: im"
 assign [class="^Banshee$"] "4: music"
-assign [class="^Spotify$"] "4: music"
+assign [title="Spotify*"] "4: music"
 assign [title="ncmpcpp: .*"] "4: music"
-assign [class="LibreOffice.*"] "5: office"
+assign [class="LibreOffice.*"] "5: docs"
 assign [class="^Nautilus$"] "6: files"
 assign [class="^Vlc$"] "7: video"
 assign [class="^Totem$"] "7: video"
 assign [class="^Transmission$"] "8: torrent"
 assign [class="^Gimp.*$"] "9: image"
 assign [class="^Inkscape$"] "9: image"
-assign [class="^VirtualBox$"] "10: vm"
-assign [class="^Update-manager$"] "11: update"
-assign [class="^Evince$"] "12: doc"
+assign [class="^Evince$"] "5: docs"
 
 # steal focus
 for_window [class="^Evince$"] 			focus
@@ -209,7 +203,7 @@ mode "resize" {
 }
 
 mode "workspace" {
-		bindsym r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+        bindsym r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
         bindsym Left move workspace prev
         bindsym Right move workspace next
 
@@ -249,7 +243,7 @@ set $trblk "#0d0d0d"
 set $trwhi "#ffffff"
 
 # class                 border  backgr. text    indicator
-client.focused          $trblk  $blk    $bryel    $red
+client.focused          $trblk  $yel    $bryel    $red
 client.focused_inactive $blk    $trblk  $blu      $red
 client.unfocused        $blk    $blk    $blu      $red
 client.urgent           $blk    $brred  $whi      $red
@@ -257,18 +251,18 @@ client.urgent           $blk    $brred  $whi      $red
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-		font pango:Source Code Pro for Powerline 10
-        status_command ~/.config/i3/pystatus.py
-		colors {
-				background $blk
-				statusline $whi
-				separator  $blu
-				focused_workspace   $blk   $blk   $bryel
-				active_workspace    $blk   $blk   $brblu
-				inactive_workspace  $blk   $blk   $blu
-				urgent_workspace    $blk   $brred   $whi
-		}
-}
+#bar {
+#		font pango:Source Code Pro for Powerline 10
+#        status_command ~/.config/i3/pystatus.py
+#		colors {
+#				background $blk
+#				statusline $whi
+#				separator  $blu
+#				focused_workspace   $blk   $blk   $bryel
+#				active_workspace    $blk   $blk   $brblu
+#				inactive_workspace  $blk   $blk   $blu
+#				urgent_workspace    $blk   $brred   $whi
+#		}
+#}
 
 
