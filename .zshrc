@@ -59,10 +59,16 @@ alias config='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles'
 
 function clr ()
 {
-	ln -sf ~/.config/colors/$1 ~/.config/colors/current
-	xrdb ~/.Xresources
+    ln -sf ~/.config/colors/$1 ~/.config/colors/current
+    xrdb ~/.Xresources
 }
 
+function init ()
+{
+    ssh-agent > /home/patrick/.ssh/agent.env
+    chmod 0600 /home/patrick/.ssh/agent.env
+    . /home/patrick/.ssh/agent.env
+}
 
 export DEBFULLNAME="Patrick Niklaus"
 export DEBEMAIL="patrick.niklaus@student.kit.edu"
