@@ -4,9 +4,7 @@ eval "$(starship init zsh)"
 
 eval "$(atuin init zsh)"
 
-
-
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
 
@@ -16,4 +14,3 @@ source /usr/share/nvm/init-nvm.sh
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
