@@ -1,8 +1,0 @@
-#!/bin/sh
-
-BG_PATH=`dconf read /org/gnome/desktop/background/picture-uri | sed 's/file:\/\///' | sed "s/^\([\"']\)\(.*\)\1\$/\2/g" | sed "s/%20/ /g"`
-
-echo "Background: $BG_PATH"
-feh --bg-scale "$BG_PATH"
-
-
