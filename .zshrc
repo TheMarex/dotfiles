@@ -7,6 +7,8 @@ eval "$(atuin init zsh)"
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
 
 export EDITOR=nvim
 source /usr/share/nvm/init-nvm.sh
