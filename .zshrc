@@ -4,6 +4,9 @@ eval "$(starship init zsh)"
 
 eval "$(atuin init zsh)"
 
+
+
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
 
