@@ -1,4 +1,4 @@
-export PATH=$PATH:/opt/google-cloud-cli/bin
+export PATH=$PATH:/opt/google-cloud-cli/bin:$HOME/.atuin/bin:$HOME/.starship/bin
 
 # VIM Mode
 bindkey -v
@@ -24,4 +24,4 @@ export EDITOR=nvim
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-which pyenv && eval "$(pyenv init -)"
+which pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
