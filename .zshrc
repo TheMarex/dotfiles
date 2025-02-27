@@ -20,8 +20,8 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
 export EDITOR=nvim
-source /usr/share/nvm/init-nvm.sh
+[[ -f /usr/share/nvm/init-nvm.sh ]] && source /usr/share/nvm/init-nvm.sh
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+which pyenv && eval "$(pyenv init -)"
