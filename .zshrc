@@ -1,5 +1,14 @@
 export PATH=$PATH:/opt/google-cloud-cli/bin
 
+# VIM Mode
+bindkey -v
+
+# Fix the delete key
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
+bindkey -M vicmd "^[[3~" delete-char
+bindkey -M viins "^[[3~" delete-char
+
 eval "$(starship init zsh)"
 
 eval "$(atuin init zsh)"
