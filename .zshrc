@@ -34,3 +34,6 @@ export EDITOR=nvim
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 which pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
+# Nextmv CLI modifications
+export PATH=/home/work/.nextmv:$PATH
+export NEXTMV_TOKEN=$(type nextmv &> /dev/null && sh -c "tok=\$(nextmv token 2>/dev/null); if [ \$? -eq 0 ]; then echo \$tok; fi")
