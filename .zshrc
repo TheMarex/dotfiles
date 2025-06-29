@@ -1,5 +1,8 @@
 export PATH=$PATH:/opt/google-cloud-cli/bin:$HOME/.atuin/bin:$HOME/.starship/bin:$HOME/.local/bin
 
+autoload -Uz compinit
+compinit
+
 # VIM Mode
 bindkey -v
 
