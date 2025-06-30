@@ -1,0 +1,3 @@
+GPG_KEY='disabled'
+TARGET='file:///run/media/patrick/BACKUP/Backups/work/mapbox'
+SOURCE='/home/patrick'
