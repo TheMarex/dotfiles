@@ -18,7 +18,10 @@ alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias hcloud="HCLOUD_TOKEN=$(pass internal/hetzner_api) hcloud"
+
+function hcloud_token() {
+  alias hcloud="HCLOUD_TOKEN=$(pass internal/hetzner_api) hcloud"
+}
 
 export EDITOR=nvim
 [[ -f /usr/share/nvm/init-nvm.sh ]] && source /usr/share/nvm/init-nvm.sh
