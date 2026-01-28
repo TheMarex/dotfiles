@@ -1,4 +1,9 @@
-export PATH=$PATH:/opt/google-cloud-cli/bin:$HOME/.atuin/bin:$HOME/.starship/bin
+export PATH=$PATH:/opt/google-cloud-cli/bin:/opt/clang-format-static:$HOME/.atuin/bin:$HOME/.starship/bin
+
+export ANDROID_HOME=$HOME/.android
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
 
 # VIM Mode
 bindkey -v
