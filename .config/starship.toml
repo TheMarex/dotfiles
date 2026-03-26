@@ -11,9 +11,9 @@ $python"""
 add_newline = false
 
 [character]
-success_symbol = "[](green)"
-error_symbol = "[](red)"
-vimcmd_symbol = "[](yellow)"
+success_symbol = "[](green)"
+error_symbol = "[](red)"
+vimcmd_symbol = "[](yellow)"
 
 [aws]
 symbol = "  "
