@@ -1,5 +1,5 @@
 Setup:
 
 ```
-git init --bare $HOME/.dotfiles
+git clone git@github.com:TheMarex/dotfiles.git --bare $HOME/.dotfiles
 ```
