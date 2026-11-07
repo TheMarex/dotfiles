@@ -1,6 +1,6 @@
 typeset -U path
 
-path+=("$HOME/.atuin/bin" "$HOME/.starship/bin" "$HOME/.local/bin")
+path+=("$HOME/.atuin/bin" "$HOME/.starship/bin" "$HOME/.local/bin" "$HOME/.cargo/bin")
 
 export EDITOR=nvim
 
