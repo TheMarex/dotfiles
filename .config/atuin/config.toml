@@ -228,9 +228,6 @@ records = true
 [daemon]
 enabled = true
 autostart = true
-## Enables using the daemon to sync. Requires the daemon to be running in the background. Start it with `atuin daemon`
-enabled = true
-autostart = true
 
 ## How often the daemon should sync in seconds
 # sync_frequency = 300
